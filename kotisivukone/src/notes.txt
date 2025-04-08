@@ -1,0 +1,8 @@
+misty rose: #FFD9DA
+
+
+linear-gradient(
+    90deg,
+    hsla(152, 100%, 50%, 1) 0%,
+    hsla(186, 100%, 69%, 1) 100%
+  );
