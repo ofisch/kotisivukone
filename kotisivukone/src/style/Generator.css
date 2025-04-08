@@ -6,6 +6,7 @@
   padding: 1em;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   z-index: 1;
+  gap: 1em;
 }
 
 .add-new-section {
@@ -32,20 +33,27 @@
   transition: 0.3s ease-in-out;
 }
 
+.section {
+  text-align: center;
+  border-radius: 8px;
+  background: var(--color-primary);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
 .generate-page-button {
   width: min-content;
   margin-left: auto;
   margin-top: 1em;
-  background: var(--color-primary-darker);
-  color: var(--color-secondary);
+  background: var(--color-secondary);
+  color: var(--color-primary);
   font-weight: bold;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   transition: 0.3s ease-in-out;
 }
 
 .generate-page-button:hover {
-  background: var(--color-secondary);
-  color: var(--color-primary-darker);
+  background: var(--color-primary);
+  color: var(--color-secondary);
   transition: 0.3s ease-in-out;
 }
 

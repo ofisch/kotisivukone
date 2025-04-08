@@ -7,7 +7,6 @@ form {
 }
 
 form label {
-  font-size: var(--font-regular);
   color: var(--color-secondary);
   font-weight: bold;
 }
@@ -24,7 +23,6 @@ input[type="text"] {
   border: none;
   background: var(--color-primary-darker);
   color: var(--color-secondary);
-  font-size: var(--font-regular);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -40,7 +38,6 @@ textarea {
   border: none;
   background: var(--color-primary-darker);
   color: var(--color-secondary);
-  font-size: var(--font-regular);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 

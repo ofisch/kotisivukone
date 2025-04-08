@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../style/BannerForm.css";
 
 interface Section {
+  type: string;
   title: string;
   text: string;
 }
@@ -15,6 +16,7 @@ export const BannerForm: React.FC<{
 
   const handleSubmit = () => {
     const bannerContent = {
+      type: "banner",
       title: bannerTitle,
       text: bannerText,
     };
@@ -23,14 +25,18 @@ export const BannerForm: React.FC<{
 
     handleAddSection(bannerContent);
     alert(`section added ${bannerContent}`);
+
+    handleSectionModal();
+    setBannerTitle("");
+    setBannerText("");
   };
 
   return (
     <>
-      <h2>Kirjoita sisältö Banneriin</h2>
+      <h1>Kirjoita sisältö Banneriin</h1>
       <p>Bannerissa on suuri otsikko ja lyhyt esittelyteksti. </p>
 
-      <form onSubmit={handleSubmit}>
+      <form>
         <div className="form-group">
           <label htmlFor="banner-title">Otsikko</label>
           <input
@@ -57,7 +63,9 @@ export const BannerForm: React.FC<{
           <button type="button" onClick={handleSectionModal}>
             Peruuta
           </button>
-          <button type="submit">Tallenna</button>
+          <button type="button" onClick={handleSubmit}>
+            Tallenna
+          </button>
         </div>
       </form>
     </>

@@ -17,9 +17,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
   align-self: flex-start;
+  max-width: 40em;
   padding: 2em;
   gap: 2em;
-
   font-size: var(--font-small);
   background: var(--color-primary);
   border-radius: 15px;

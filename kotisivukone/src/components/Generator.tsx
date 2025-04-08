@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../style/Generator.css";
 import { SectionModal } from "./SectionModal";
 
 interface Section {
+  type: string;
+  // type: "banner" | "text" | "cards" | "carousel";
   title: string;
   text: string;
 }
@@ -18,10 +20,12 @@ export const Generator = () => {
   const [pageSections, setPageSections] = useState<Section[]>([]);
 
   const handleAddSection = (section: Section) => {
-    console.log("section to be added:  ", section);
     setPageSections([...pageSections, section]);
-    console.log(pageSections);
   };
+
+  useEffect(() => {
+    console.log("Updated pageSections:", pageSections);
+  }, [pageSections]);
 
   return (
     <>
@@ -32,6 +36,15 @@ export const Generator = () => {
         alt=""
       />
       <div className="generator">
+        {pageSections.map((section, index) => {
+          return (
+            <div key={index} className="section">
+              <h2>{section.type}</h2>
+              <p>{section.title}</p>
+              <p>{section.text}</p>
+            </div>
+          );
+        })}
         <div className="add-new-section">
           <span onClick={handleSectionModal} id="plus">
             +

@@ -3,6 +3,7 @@ import "../style/SectionModal.css";
 import { BannerForm } from "./sectionforms/BannerForm";
 
 interface Section {
+  type: string;
   title: string;
   text: string;
 }
