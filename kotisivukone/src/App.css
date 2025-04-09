@@ -48,3 +48,12 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
+.info {
+  margin-top: 5em;
+  font-size: var(--font-large);
+  background: var(--color-primary-darker);
+  color: var(--color-secondary);
+  border-radius: 8px;
+  padding: 2em;
+}
