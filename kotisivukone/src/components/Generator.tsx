@@ -7,6 +7,7 @@ interface Section {
   // type: "banner" | "text" | "cards" | "carousel";
   title: string;
   text: string;
+  html: string;
 }
 
 export const Generator = () => {
@@ -26,6 +27,24 @@ export const Generator = () => {
   useEffect(() => {
     console.log("Updated pageSections:", pageSections);
   }, [pageSections]);
+
+  const [pageHtml, setPageHtml] = useState("");
+
+  const generatePage = () => {
+    // generoidaan koko sivun HTML
+    const generatedHtml = `
+      <html>
+        <head>
+          <title>Kotisivukone</title>
+        </head>
+        <body>
+          ${pageSections.map((section) => section.html).join("")}
+        </body>
+      </html>
+    `;
+    setPageHtml(generatedHtml);
+    console.log(pageHtml);
+  };
 
   return (
     <>
@@ -51,7 +70,26 @@ export const Generator = () => {
           </span>
         </div>
       </div>
-      <button className="generate-page-button">Luo</button>
+      <button className="generate-page-button" onClick={generatePage}>
+        Luo
+      </button>
+
+      {pageHtml !== "" && (
+        <div className="preview">
+          <h2>Esikatselu</h2>
+          <div
+            className="preview-content"
+            dangerouslySetInnerHTML={{ __html: pageHtml }}
+          ></div>
+          <button
+            className="close-preview-button"
+            onClick={() => setPageHtml("")}
+          >
+            Sulje esikatselu
+          </button>
+        </div>
+      )}
+
       {toggleSectionModal && (
         <SectionModal
           handleSectionModal={handleSectionModal}

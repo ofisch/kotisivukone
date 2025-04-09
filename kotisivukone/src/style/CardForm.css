@@ -1,0 +1,48 @@
+.card-form {
+  background: var(--color-primary-darker);
+  border-radius: 8px;
+  padding: 2em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.card-form input {
+  background: var(--color-primary);
+}
+
+.card-form textarea {
+  background: var(--color-primary);
+}
+
+.add-card-button {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-top: 1em;
+  justify-self: end;
+}
+
+.cards-to-add {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.card-to-add {
+  background: var(--color-primary-darker);
+  color: var(--color-secondary);
+  border-radius: 8px;
+  padding: 2em;
+}
+
+.cards-form-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  width: 100%;
+  justify-content: space-between;
+}

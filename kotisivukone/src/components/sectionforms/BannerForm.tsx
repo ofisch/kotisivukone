@@ -5,6 +5,7 @@ interface Section {
   type: string;
   title: string;
   text: string;
+  html: string;
 }
 
 export const BannerForm: React.FC<{
@@ -15,16 +16,21 @@ export const BannerForm: React.FC<{
   const [bannerText, setBannerText] = useState("");
 
   const handleSubmit = () => {
+    const bannerHtml = `
+    <div className="banner">
+        <h1>${bannerTitle}</h1>
+        <p>${bannerText}</p>
+    </div>
+    `;
+
     const bannerContent = {
       type: "banner",
       title: bannerTitle,
       text: bannerText,
+      html: bannerHtml,
     };
 
-    console.log("bannerContent, ", bannerContent);
-
     handleAddSection(bannerContent);
-    alert(`section added ${bannerContent}`);
 
     handleSectionModal();
     setBannerTitle("");
@@ -33,7 +39,7 @@ export const BannerForm: React.FC<{
 
   return (
     <>
-      <h1>Kirjoita sisältö Banneriin</h1>
+      <h1>Banneri</h1>
       <p>Bannerissa on suuri otsikko ja lyhyt esittelyteksti. </p>
 
       <form>

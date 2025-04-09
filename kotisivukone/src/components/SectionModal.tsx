@@ -1,11 +1,14 @@
 import { useState } from "react";
 import "../style/SectionModal.css";
 import { BannerForm } from "./sectionforms/BannerForm";
+import { TextForm } from "./sectionforms/TextForm";
+import { CardsForm } from "./sectionforms/CardsForm";
 
 interface Section {
   type: string;
   title: string;
   text: string;
+  html: string;
 }
 
 interface SectionModalProps {
@@ -44,10 +47,10 @@ export const SectionModal: React.FC<SectionModalProps> = ({
                   onClick={() => handleSectionClick("text")}
                   className="text-preview"
                 >
-                  <h2>Tekstiosio</h2>
+                  <h2>Teksti</h2>
                   <p>
-                    Tekstiosio, jossa voit kertoa lisää esimerkiksi
-                    yrityksestäsi tai palveluistasi.
+                    Teksti, jossa voit kertoa lisää esimerkiksi yrityksestäsi
+                    tai palveluistasi.
                   </p>
                 </div>
                 <div
@@ -90,6 +93,16 @@ export const SectionModal: React.FC<SectionModalProps> = ({
             </div>
           ) : selectedSection === "banner" ? (
             <BannerForm
+              handleSectionModal={handleSectionModal}
+              handleAddSection={handleAddSection}
+            />
+          ) : selectedSection === "text" ? (
+            <TextForm
+              handleSectionModal={handleSectionModal}
+              handleAddSection={handleAddSection}
+            />
+          ) : selectedSection === "cards" ? (
+            <CardsForm
               handleSectionModal={handleSectionModal}
               handleAddSection={handleAddSection}
             />

@@ -20,6 +20,7 @@ form label {
 input[type="text"] {
   padding: 1rem;
   border-radius: 8px;
+  font-size: var(--font-regular);
   border: none;
   background: var(--color-primary-darker);
   color: var(--color-secondary);
@@ -36,6 +37,7 @@ textarea {
   padding: 1rem;
   border-radius: 8px;
   border: none;
+  font-size: var(--font-regular);
   background: var(--color-primary-darker);
   color: var(--color-secondary);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;

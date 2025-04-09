@@ -18,6 +18,7 @@
   transform: translate(-50%, -50%);
   align-self: flex-start;
   max-width: 40em;
+  min-width: 30em;
   padding: 2em;
   gap: 2em;
   font-size: var(--font-small);
