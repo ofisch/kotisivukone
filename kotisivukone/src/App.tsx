@@ -25,23 +25,59 @@ function App() {
         <Generator />
         <div className="info">
           <div className="">
-            <h2>Kotisivukone</h2>
+            <h2>Mikä ihmeen kotisivukone?</h2>
             <p>
               Kotisivukone on työkalu, jolla voit luoda kotisivun helposti ja
-              nopeasti. Voit lisätä sivulle haluamasi osiot ja valita sille
-              sopivan ulkoasun. Kotisivukone generoi sinulle valmiin
-              HTML-koodin, jonka voit ladata ja julkaista omalla
-              verkkosivustollasi.
-            </p>
-          </div>
-          <div>
-            <p>
-              Voit käyttä kotisivukonetta helpon ja kätevän kotisivun luomiseen,
-              tai inspiraation lähteenä, jota voit jatkokehittää ja muokata
-              haluamallasi tavalla.
+              nopeasti. <br />
+              <h4>Rakenna kotisivusi</h4>
+              <ul>
+                <li>kokoamalla se palikoista</li>
+                <li>lisäämällä sisältösi</li>
+              </ul>
+              <span style={{ fontWeight: "bold" }}>
+                Kun sivusi rakenne on valmis,{" "}
+              </span>
+              valitse sille vielä
+              <ul>
+                <li> ulkoasu</li>
+                <li>väriteema</li>
+                <li>
+                  ja paina{" "}
+                  <span
+                    style={{
+                      background:
+                        "-webkit-linear-gradient(0deg, #FC466B 0%, #3F5EFB 100%)",
+                      backgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Luo
+                  </span>
+                  -painiketta.{" "}
+                </li>
+              </ul>
+              <span style={{ fontWeight: "bold" }}>
+                Kotisivusi on valmis sekunneissa! 🚀
+              </span>
             </p>
           </div>
         </div>
+        <footer>
+          <ul style={{ listStyleType: "none", textAlign: "center" }}>
+            <li>tehty 🩵:lla Suomessa</li>
+            <li>
+              <a
+                style={{
+                  background: "var(--color-primary-darker)",
+                }}
+                href="https://onni.pro"
+              >
+                onni.pro
+              </a>
+            </li>
+          </ul>
+        </footer>
       </div>
     </>
   );

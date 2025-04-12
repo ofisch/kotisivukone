@@ -37,7 +37,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40em;
+  width: 55em;
   padding-top: var(--padding-top);
   padding-bottom: var(--padding-bottom);
 }

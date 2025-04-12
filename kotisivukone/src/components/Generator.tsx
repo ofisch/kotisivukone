@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import "../style/Generator.css";
 import { SectionModal } from "./SectionModal";
+import { AddNewSection } from "./AddNewSection";
+import { BannerBlock } from "./sectionblocks/BannerBlock";
+import { TextBlock } from "./sectionblocks/TextBlock";
+import { CardsBlock } from "./sectionblocks/CardsBlock";
+import { CarouselBlock } from "./sectionblocks/CarouselBlock";
 
 interface Section {
   type: string;
@@ -48,30 +53,64 @@ export const Generator = () => {
 
   return (
     <>
-      <img id="ball-top-right" src="../src/assets/grainGradient.jpg" alt="" />
-      <img
-        id="ball-bottom-left"
-        src="../src/assets/grainGradient2.jpg"
-        alt=""
-      />
+      <div id="ball-top-right" />
+      <div id="ball-bottom-left" />
+
       <div className="generator">
-        {pageSections.map((section, index) => {
-          return (
-            <div key={index} className="section">
+        {pageSections.map((section, index) =>
+          section.type === "banner" ? (
+            <BannerBlock
+              key={index}
+              section={section}
+              pageSections={pageSections}
+              setPageSections={setPageSections}
+            />
+          ) : section.type === "text" ? (
+            <TextBlock
+              key={index}
+              section={section}
+              pageSections={pageSections}
+              setPageSections={setPageSections}
+            />
+          ) : section.type === "cards" ? (
+            <CardsBlock
+              key={index}
+              section={section}
+              pageSections={pageSections}
+              setPageSections={setPageSections}
+            />
+          ) : section.type === "carousel" ? (
+            <CarouselBlock
+              key={index}
+              section={section}
+              pageSections={pageSections}
+              setPageSections={setPageSections}
+            />
+          ) : (
+            <div key={index} className="section-placeholder">
               <h2>{section.type}</h2>
-              <p>{section.title}</p>
               <p>{section.text}</p>
+              <p>{section.html}</p>
             </div>
-          );
-        })}
-        <div className="add-new-section">
-          <span onClick={handleSectionModal} id="plus">
-            +
-          </span>
-        </div>
+          )
+        )}
+
+        <AddNewSection handleSectionModal={handleSectionModal} />
       </div>
       <button className="generate-page-button" onClick={generatePage}>
-        Luo
+        <span
+          style={{
+            background:
+              "-webkit-linear-gradient(0deg, #FC466B 0%, #3F5EFB 100%)",
+            backgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            fontWeight: "bold",
+            fontSize: "1.1rem",
+          }}
+        >
+          {" "}
+          Luo
+        </span>{" "}
       </button>
 
       {pageHtml !== "" && (
